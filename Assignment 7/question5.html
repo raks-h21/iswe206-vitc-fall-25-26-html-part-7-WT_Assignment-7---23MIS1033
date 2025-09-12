@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>Question 5</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .tabContent{display:none;}
+  </style>
+</head>
+<body>
+  <button class="tab" data-target="#home">Home</button>
+  <button class="tab" data-target="#about">About</button>
+  <button class="tab" data-target="#contact">Contact</button>
+
+  <div id="home" class="tabContent">Welcome to Home</div>
+  <div id="about" class="tabContent">About Us Info</div>
+  <div id="contact" class="tabContent">Contact Details</div>
+
+  <script>
+    $(".tab").click(function(){
+      $(".tabContent").hide();
+      $($(this).data("target")).show();
+    });
+  </script>
+</body>
+</html>

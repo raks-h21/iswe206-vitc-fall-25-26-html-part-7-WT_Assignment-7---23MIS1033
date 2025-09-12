@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>Question 7</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <input type="text" id="search" placeholder="Search..."><br><br>
+  <table border="1" id="empTable">
+    <tr><td>John</td><td>HR</td><td>john@mail.com</td></tr>
+    <tr><td>Amy</td><td>IT</td><td>amy@mail.com</td></tr>
+    <tr><td>Sam</td><td>Finance</td><td>sam@mail.com</td></tr>
+  </table>
+
+  <script>
+    $("#search").keyup(function(){
+      let value = $(this).val().toLowerCase();
+      $("#empTable tr").filter(function(){
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+      });
+    });
+  </script>
+</body>
+</html>

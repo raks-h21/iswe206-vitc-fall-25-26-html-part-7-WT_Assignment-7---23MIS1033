@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>Question 4</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #topBtn{display:none; position:fixed; bottom:20px; right:20px;}
+  </style>
+</head>
+<body style="height:2000px;">
+  <button id="topBtn">Top</button>
+
+  <script>
+    $(window).scroll(function(){
+      if($(this).scrollTop()>200) $("#topBtn").fadeIn();
+      else $("#topBtn").fadeOut();
+    });
+    $("#topBtn").click(function(){
+      $("html, body").animate({scrollTop:0},500);
+    });
+  </script>
+</body>
+</html>

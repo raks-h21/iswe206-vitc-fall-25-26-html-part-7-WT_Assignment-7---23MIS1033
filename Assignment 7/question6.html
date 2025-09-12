@@ -1,0 +1,18 @@
+<html>
+<head>
+  <title>Question 6</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <form>
+    <input type="checkbox" id="terms"> I agree to Terms<br><br>
+    <button id="submitBtn" disabled>Submit</button>
+  </form>
+
+  <script>
+    $("#terms").change(function(){
+      $("#submitBtn").prop("disabled", !this.checked);
+    });
+  </script>
+</body>
+</html>

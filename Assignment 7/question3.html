@@ -1,0 +1,17 @@
+<html>
+<head>
+  <title>Question 3</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <textarea id="msg" maxlength="100"></textarea><br>
+  <span id="count">100</span> characters left
+
+  <script>
+    $("#msg").keyup(function(){
+      let left = 100 - $(this).val().length;
+      $("#count").text(left);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>Question 2</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .answer{display:none; margin-left:20px;}
+  </style>
+</head>
+<body>
+  <p class="q">Q1: What is jQuery?</p>
+  <p class="answer">It’s a JS library for DOM, events, effects.</p>
+
+  <p class="q">Q2: What is HTML?</p>
+  <p class="answer">It’s a markup language for webpages.</p>
+
+  <script>
+    $(".q").click(function(){
+      $(".answer").not($(this).next()).slideUp();
+      $(this).next().slideToggle();
+    });
+  </script>
+</body>
+</html>

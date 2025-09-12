@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>Question 9</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <button id="loadBtn">Load Users</button>
+  <ul id="userList"></ul>
+
+  <script>
+    $("#loadBtn").click(function(){
+      $.getJSON("https://jsonplaceholder.typicode.com/users", function(data){
+        $("#userList").empty();
+        $.each(data, function(i,user){
+          $("#userList").append("<li>"+user.name+" - "+user.email+"</li>");
+        });
+      });
+    });
+  </script>
+</body>
+</html>

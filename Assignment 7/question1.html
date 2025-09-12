@@ -1,0 +1,34 @@
+<html>
+<head>
+  <title>Question 1</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <form id="signupForm">
+    <input type="text" id="name" placeholder="Name"><br><br>
+    <input type="text" id="email" placeholder="Email"><br><br>
+    <button type="submit">Sign Up</button>
+  </form>
+  <p id="msg" style="color:red;"></p>
+
+  <script>
+    $("#signupForm").submit(function(e){
+      e.preventDefault();
+      let valid = true;
+      let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+      $("input").each(function(){
+        if($(this).val().trim() === "") valid = false;
+      });
+
+      if(!emailPattern.test($("#email").val())) valid = false;
+
+      if(valid){
+        $("#msg").text("Form submitted!").css("color","green");
+      }else{
+        $("#msg").text("Please fill all fields correctly.");
+      }
+    });
+  </script>
+</body>
+</html>

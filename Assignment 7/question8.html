@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>Question 8</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <table border="1">
+    <tr><td>Item A</td><td class="price">100</td><td><input type="number" class="qty" value="1"></td></tr>
+    <tr><td>Item B</td><td class="price">200</td><td><input type="number" class="qty" value="1"></td></tr>
+  </table>
+  <p>Total: <span id="total">0</span></p>
+
+  <script>
+    function calcTotal(){
+      let sum=0;
+      $("tr").each(function(){
+        let price = parseInt($(this).find(".price").text()) || 0;
+        let qty = parseInt($(this).find(".qty").val()) || 0;
+        sum += price * qty;
+      });
+      $("#total").text(sum);
+    }
+    $(".qty").change(calcTotal);
+    calcTotal();
+  </script>
+</body>
+</html>

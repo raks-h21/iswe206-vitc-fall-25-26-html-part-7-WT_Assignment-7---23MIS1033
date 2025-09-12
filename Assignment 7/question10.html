@@ -1,0 +1,19 @@
+<html>
+<head>
+  <title>Question 10</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body.dark-mode{background:black; color:white;}
+  </style>
+</head>
+<body>
+  <button id="modeBtn">Toggle Dark Mode</button>
+  <p>This is some text.</p>
+
+  <script>
+    $("#modeBtn").click(function(){
+      $("body").toggleClass("dark-mode");
+    });
+  </script>
+</body>
+</html>
